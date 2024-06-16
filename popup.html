@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Hello World</title>
+  <style>
+    body { font-family: Arial, sans-serif; }
+    #content { margin: 20px; }
+  </style>
+</head>
+<body>
+  <div id="content">
+    <h1>Hello World Extension</h1>
+    <p id="message"></p>
+  </div>
+  <script>
+    chrome.storage.sync.get(['hello'], (result) => {
+      document.getElementById('message').innerText = 'Stored value: ' + result.hello;
+    });
+  </script>
+</body>
+</html>
+
+
+
+<script>
+  chrome.storage.sync.get(['key'], (result) => {
+    document.getElementById('message').innerText = 'Stored value: ' + result.key;
+  });
+</script>
